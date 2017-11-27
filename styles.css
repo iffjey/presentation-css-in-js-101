@@ -10,13 +10,13 @@
 }
 
 * {
-  font-family: "Stem Text", sans-serif !important
+  font-family: "Stem Text", "PT Sans", sans-serif !important
 }
+
+/* code-snippets styles */
 
 .code-example {
   background: #000;
-}
-code {
   color: #fff;
 }
 .property {
@@ -36,15 +36,22 @@ code {
   color: #C5C8C6;
   opacity: 0.7;
 }
+
+/* quotes styles */
+
 .avatar {
   height: 60px;
   border-radius: 50%;
   vertical-align: bottom;
   border: 2px solid black;
 }
+
 blockquote.no-quotes::before {
   display: none;
 }
+
+/* busted styles */
+
 .busted {
   display: block;
   padding-top: 25px;
@@ -53,7 +60,4 @@ blockquote.no-quotes::before {
   color: rgb(255, 0, 0);
   border: 20px solid rgb(190, 0, 0);
   transform: rotate(30deg);
-}
-h2.shout.myths {
-  font-size: 140px;
 }

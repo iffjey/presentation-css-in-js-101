@@ -63,10 +63,26 @@
 
 	<section class="slide" id="disclaimer">
     <h2>Disclaimer</h2>
+    <div>
+      <p class="note">styled-components - Visual primitives for the component age.</p>
+      <p>Use the best bits of ES6 and CSS to style your apps without stress </p>
+    </div>
     <style>
       #disclaimer {
-        background-image: url("pictures/styled-components-disclaimer.png");
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-image: url("pictures/styled-components-disclaimer.png"), linear-gradient(20deg,rgb(219,112,147),#daa357);
         background-position: center;
+        color: #fff;
+      }
+      #disclaimer h2{
+        color: #fff;
+      }
+      #disclaimer .note {
+        font-weight: bold;
+        color: #fff;
+        margin: 0;
       }
     </style>
 	</section>
@@ -184,6 +200,28 @@
       <code><span class="value">`</span>;</code>
     </pre>
   </section>
+
+  <section class="slide code-example" id="inject-global">
+    <pre>
+      <code><span class="operator">import</span> { injectGlobal } <span class="operator">from</span> <span class="value">"styled-components"</span></code>
+      <code> </code>
+      <code>injectGlobal<span class="value">`</span></code>
+      <code>    <span class="property">@font-face </span><span class="punctuation">{</code>
+      <code>        <span class="property">font-family</span><span class="punctuation">:</span> <span class="value">'Operator Mono'</span>;</code>
+      <code>        <span class="property">src</span><span class="punctuation">:</span> <span class="value">url('../fonts/Operator-Mono.ttf')</span>;</code>
+      <code>    <span class="punctuation">}</span></code>
+      <code> </code>
+      <code>    <span class="property">body </span><span class="punctuation">{</span></code>
+      <code>        <span class="property">margin</span><span class="punctuation">:</span> <span class="value">0</span>;</code>
+      <code>    <span class="punctuation">}</span></code>
+      <code><span class="value">`</span>;</code>
+    </pre>
+    <style>
+      #inject-global code {
+        font-size: 21px;
+      }
+    </style>
+	</section>
 
   <section class="slide code-example">
     <pre>
@@ -387,7 +425,7 @@
 	<section class="slide">
     <h2>How to choose?</h2>
 		<ol>
-			<li>Objects vs Template literals <a href="#19">#Object-syntax</a></li>
+			<li>Objects vs Template literals <a href="#object-syntax">#Object-syntax</a></li>
 			<li class="next">React vs Framework agnostic</li>
 			<li class="next">React Native support?</li>
 			<li class="next">Server-side rendering support?</li>
@@ -396,7 +434,7 @@
 		</ol>
   </section>
   
-  <section class="slide code-example">
+  <section class="slide code-example" id="object-syntax">
     <pre>
       <code><span class="operator">import</span> glamorous <span class="operator">from</span> <span class="value">"glamorous"</span></code>
       <code> </code>
@@ -659,6 +697,7 @@
     <ul>
       <li><a href="https://blockmetry.com/blog/javascript-disabled">0.2% of browsers have javascript disabled</a></li>
       <li class="next">Tooling: still not perfect (e.g. autocomplete doesn't support template literals)</li>
+      <li class="next">Readable classnames for test automation</li>
       <li class="next">User inputs must be sanitized - <a href="https://reactarmory.com/answers/how-can-i-use-css-in-js-securely">How can I use CSS-in-JS securely?</a></li>
       <li class="next">Absence of atomic web design leads to "spaghetti code" - <a href="http://bradfrost.com/blog/post/atomic-web-design/">Atomic Web Design</a></li>
     </ul>
@@ -788,6 +827,9 @@
       </li>
       <li>
         <a href="https://github.com/A-gambit/CSS-IN-JS-Benchmarks">CSS in JS Benchmarks</a> by Gregory Shehet
+      </li>
+      <li>
+        <a href="https://css-in-js-playground.com/">CSS in JS Playground</a> by Dustin Schau
       </li>
     </ul>
   </section>

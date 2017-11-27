@@ -1,5 +1,5 @@
 {
-  "name": "css-in-js-101",
+  "name": "presentation-css-in-js-101",
   "description": "The slidedeck (powered by Shower HTML presentation engine) for the CSS in JS presentation delivered at Piter CSS meetup_16",
   "version": "1.0.1",
   "author": {
@@ -9,7 +9,7 @@
   "homepage": "https://github.com/iffjey/presentation-css-in-js-101",
   "repository": {
     "type": "git",
-    "url": "git://github.com:iffjey/presentation-css-in-js-101.git"
+    "url": "git://github.com/iffjey/presentation-css-in-js-101.git"
   },
   "bugs": {
     "url": "https://github.com/iffjey/presentation-css-in-js-101/issues"

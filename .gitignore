@@ -1,4 +1,5 @@
 node_modules
 prepared
+.publish
 archive.zip
 .DS_store

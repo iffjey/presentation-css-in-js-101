@@ -1,24 +1,24 @@
 {
-  "name": "shower",
-  "description": "Shower HTML presentation engine",
-  "version": "2.3.0",
+  "name": "CSS-in-JS 101",
+  "description": "The slidedeck (powered by Shower HTML presentation engine) for the CSS in JS presentation delivered at Piter CSS meetup_16",
+  "version": "1.0.0",
   "author": {
-    "name": "Vadim Makeev",
-    "url": "http://pepelsbey.net/"
+    "name": "Evgenii Shkodin",
+    "url": "https://github.com/iffjey"
   },
-  "homepage": "https://github.com/shower/shower",
+  "homepage": "https://github.com/iffjey/presentation-css-in-js-101",
   "repository": {
     "type": "git",
-    "url": "git://github.com/shower/shower.git"
+    "url": "git://github.com:iffjey/presentation-css-in-js-101.git"
   },
   "bugs": {
-    "url": "http://github.com/shower/shower/issues"
+    "url": "https://github.com/iffjey/presentation-css-in-js-101/issues"
   },
   "license": "MIT",
   "keywords": [
-    "shower",
+    "CSS-in-JS",
     "presentation",
-    "template"
+    "styled-components"
   ],
   "files": [
     "pictures/**",

@@ -47,8 +47,9 @@
 
 	<section class="slide" id="alert">
 		<h2 class="shout shrink">
-      <img src="pictures/alert.svg" alt="alert-sign" height="250" />
-			Внимание! Синдром самозванца
+      Внимание! 
+        <img src="pictures/alert.svg" alt="alert-sign" height="250" />
+		  Синдром самозванца
 		</h2>
 		<style>
 			#alert h2 {
@@ -99,9 +100,8 @@
       <code>    <span class="property">padding</span><span class="punctuation">:</span> <span class="value">0.5em</span>;</code>
       <code>    <span class="property">margin</span><span class="punctuation">:</span> <span class="value">0.5em</span>;</code>
       <code>    <span class="property">color</span><span class="punctuation">:</span> <span class="value">palevioletred</span>;</code>
-      <code>    <span class="property">background</span><span class="punctuation">:</span> <span class="value">papayawhip</span>;</code>
+      <code>    <span class="property">background</span><span class="punctuation">:</span> <span class="value">white</span>;</code>
       <code>    <span class="property">border</span><span class="punctuation">:</span> <span class="value">none</span>;</code>
-      <code>    <span class="property">border-radius</span><span class="punctuation">:</span> <span class="value">3px</span>;</code>
       <code><span class="value">`</span>;</code>
     </pre>
     <style>
@@ -134,9 +134,8 @@
         padding: 0.5em;
         margin: 0.5em;
         color: palevioletred;
-        background: papayawhip;
+        background: white;
         border: none;
-        border-radius: 3px;
         vertical-align: middle;
       }
     </style>
@@ -248,7 +247,53 @@
         font-size: 17px;
       }
     </style>
-	</section>
+  </section>
+
+  <section class="slide code-example" id="themes">
+    <h2>Темы</h2>
+    <pre>
+      <code><span class="property">const</span> themes <span class="operator">=</span> {</code>
+      <code>    <span class="property">dark</span><span class="punctuation">:</span> {</code>
+      <code>        <span class="property">buttonBackground</span><span class="punctuation">:</span> <span class="value">'#000'</span>,</code>
+      <code>        <span class="property">buttonColor</span><span class="punctuation">:</span> <span class="value">'#fff'</span></code>
+      <code>    },</code>
+      <code>    <span class="property">light</span><span class="punctuation">:</span> {</code>
+      <code>        <span class="property">buttonBackground</span><span class="punctuation">:</span> <span class="value">'#fff'</span>,</code>
+      <code>        <span class="property">buttonColor</span><span class="punctuation">:</span> <span class="value">'#000'</span></code>
+      <code>    }</code>
+      <code>};</code>
+    </pre>
+    <style>
+      #themes code {
+        font-size: 19px;
+      }
+    </style>
+  </section>
+
+  <section class="slide code-example">
+    <pre>
+      <code><span class="operator">import</span> { ThemeProvider } <span class="operator">from</span> <span class="value">"styled-components"</span></code>
+      <code> </code>
+      <code>render(</code>
+      <code>    <span class="property">&lt;ThemeProvider</span> theme<span class="operator">=</span>{ themes[<span class="value">currentTheme</span>] } <span class="property">&gt;</span></span></code>
+      <code>        <span class="property">&lt;App/&gt;</span></code>
+      <code>    <span class="property">&lt;/ThemeProvider&gt;</span></code>
+      <code>);</code>
+    </pre>
+  </section>
+  
+  <section class="slide code-example">
+    <pre>
+      <code><span class="property">const</span> Button <span class="operator">=</span> styled.button <span class="value">`</span></code>
+      <code>    <span class="property">background</span><span class="punctuation">:</span> <span class="interpolation">${</span>props <span class="operator">=></span> props.theme.buttonBackground <span class="interpolation">}</span>;</code>
+      <code>    <span class="property">color</span><span class="punctuation">:</span> <span class="interpolation">${</span>props <span class="operator">=></span> props.theme.buttonColor <span class="interpolation">}</span> ;</code>
+      <code>    <span class="property">margin</span><span class="punctuation">:</span> <span class="value">1em</span>;</code>
+      <code>    <span class="property">padding</span><span class="punctuation">:</span> <span class="value">0.25em 1em</span>;</code>
+      <code>    <span class="property">border</span><span class="punctuation">:</span> <span class="value">2px solid palevioletred</span>;</code>
+      <code>    <span class="property">border-radius</span><span class="punctuation">:</span> <span class="value">3px</span>;</code>
+      <code><span class="value">`</span>;</code>
+    </pre>
+  </section>
 
   <section class="slide code-example" id="animation">
     <h2>Создание анимации</h2>
@@ -365,13 +410,48 @@
     </figure>
   </section>
 
-  <section class="slide">
-      <figure>
-        <img class="cover" src="pictures/opinions.png" alt="Different opinions">
-        <figcaption>
-          <a href="https://medium.com/@didoo/let-there-be-peace-on-css-8b26829f1be0">© Cristiano Rastelli</a>
-        </figcaption>
-    </section>
+  <section class="slide" id="opinions">
+    <h2>Точки зрения</h2>
+    <div class="wrapper">
+      <div class="column">
+        <h3>СSS сообщество</h3>
+        <ul>
+          <li>Разделение областей ответственности</li>
+          <li>Вы ломаете Веб!</li>
+          <li>Излишнее использование инструментов</li>
+          <li>Люди используют эту технологию, так как не знают CSS</li>
+        </ul>
+      </div>
+      <div class="column">
+        <h3>CSS-in-JS сообщество</h3>
+        <ul>
+            <li>В CSS есть врожденные проблемы</li>
+            <li>Каскадность и наследование</li>
+            <li>Глобальная область видимости</li>
+            <li>Плохо масштабируется и не создан для этого</li>
+          </ul>
+      </div>
+    </div>
+    <div class="source">
+      Источник: <a href="https://medium.com/@didoo/let-there-be-peace-on-css-8b26829f1be0">Let there be peace on css</a>, Кристиано Растелли
+    </div>
+    <style>
+      #opinions .wrapper {
+        display: flex;
+        justify-content: space-between;
+        font-size: 22px;
+      }
+      #opinions h3 {
+        font-weight: bold;
+      }
+      #opinions .column + .column {
+        margin-left: 50px;
+      }
+      #opinions .source {
+        font-size: 17px;
+      }
+    </style>
+  </section>
 
 	<section class="slide" id="libraries">
     <div class="wrapper">
@@ -740,7 +820,6 @@
       <li class="next">Подсветка синтаксиса - <a href="https://github.com/styled-components/vscode-styled-components">vscode-styled-components</a></li>
       <li class="next">Тестирование состояний - <a href="https://github.com/styled-components/jest-styled-components">jest-styled-components</a></li>
       <li class="next">Миксины и хелперы - <a href="https://github.com/styled-components/polished">polished</a> <span class="interpolation">${ ✨ }</span></li>
-      <li class="next">Утилиты для дизайн-систем - <a href="https://github.com/jxnblk/styled-system">styled-system</a></li>
       <li class="next">Автодополнение - <a href="https://github.com/ansumanshah/css-in-js">Расширение css-in-js для Atom и VS code</a></li>
     </ul>
   </section>
@@ -748,17 +827,17 @@
   <section class="slide" id="benefits">
     <h2>Достоинства</h2>
     <ul>
-      <li>Помогает думать компонентами</li>
+      <li>Помогает мыслить компонентами</li>
       <li class="next">Поддержка тем из коробки</li>
       <li class="next">Полная изоляция стилей</li>
       <li class="next">Изолированные селекторы (по умолчанию)</li>
       <li class="next">Префиксы (по умолчанию)</li>
-      <li class="next">Выделение критического CSS</li>
-      <li class="next">Отложенное вычисление - стилей создаются, только при подключении компонента</li>
-      <li class="next">Легкое использование единого кода CSS и JS  - констант и функций</li>
-      <li class="next">Умная оптимизация с Java Script: удаление кода, который не используется</li>
+      <li class="next">Выделение критического CSS - стилей необходимых для отображения данного конкретного состояния приложения</li>
+      <li class="next">Отложенное вычисление - стили создаются, только при подключении компонента</li>
+      <li class="next">Удобное использование единого кода в CSS и JS - констант и функций</li>
+      <li class="next">Умная оптимизация с Javascript: удаление кода, который не используется</li>
       <li class="next">Юнит тесты для CSS</li>
-      <li class="next">Единый источник правды: использование общей базы кода с React Native</li>
+      <li class="next">Возможность переиспользования стилей на разных платформах: React Native</li>
     </ul>
     <style>
       #benefits ul {
@@ -770,10 +849,10 @@
   <section class="slide" id="drawbacks">
     <h2>Недостатки</h2>
     <ul>
-      <li><a href="https://blockmetry.com/blog/javascript-disabled">В 0,2% браузеров отключен Java Script</a></li>
+      <li><a href="https://blockmetry.com/blog/javascript-disabled">В 0,2% браузеров отключен Javascript</a></li>
       <li class="next">Инструменты всё ещё не идеальны: автодополнение не поддерживает строковые литералы</li>
       <li class="next">Читаемые классы для автоматизации тестирования</li>
-      <li class="next">Не все знают Java Script</li>
+      <li class="next">Не все знают Javascript</li>
       <li class="next">Пользовательский ввод нужно проверять: - <a href="https://reactarmory.com/answers/how-can-i-use-css-in-js-securely">Как использовать CSS-in-JS безопасно?</a></li>
       <li class="next">Отсутствие атомарного подхода к дизайну приводит к спагетти-коду: <a href="http://bradfrost.com/blog/post/atomic-web-design/">Атомарный веб-дизайн</a></li>
     </ul>
@@ -785,39 +864,63 @@
   </section>
 
   <section class="slide code-example" id="sass-styles">
-    <h2>Ад интерполяций</h2>
-    <div class="wrapper">
-      <pre>
-        <code>.btn <span class="value">{</span></code>
-        <code>    <span class="property">display</span><span class="punctuation">:</span> <span class="value">inline-block</span>;</code>      
-        <code>    <span class="property">border</span><span class="punctuation">:</span> <span class="value">none</span>;</code>
-        <code>    <span class="property">border-radius</span><span class="punctuation">:</span> <span class="value">$base-radius</span>;</code>
-        <code>    <span class="property">cursor</span><span class="punctuation">:</span> <span class="value">pointer</span>;</code>
-        <code>    <span class="property">font-size</span><span class="punctuation">:</span> <span class="value">$base-font-size</span>;</code>
-        <code>    <span class="property">padding</span><span class="punctuation">:</span> <span class="value">0 12px</span>;</code>
-        <code>    <span class="interpolation">/* больше стилей для обычной кнопки... */</span></code>
-        <code> </code>
-        <code>    &--secondary <span class="value">{</span></code>
-        <code>        <span class="property">background</span><span class="punctuation">:</span> <span class="value">$secondary</span>;</code>
-        <code>    <span class="value">}</span></code>
-        <code> </code>
-        <code>    &--small <span class="value">{</span></code>
-        <code>        <span class="property">font-size</span><span class="punctuation">:</span> <span class="value">($base-font-size * 0.875)</span>;</code>
-        <code>        <span class="property">line-height</span><span class="punctuation">:</span> <span class="value">2.2</span>;</code>
-        <code>        <span class="property">padding</span><span class="punctuation">:</span> <span class="value">0 12px</span>;</code>
-        <code>    <span class="value">}</span></code>
-        <code>    <span class="interpolation">/* больше стилей для других вариаций кнопки... */</span></code>
-        <code><span class="value">}</span>;</code>
-      </pre>
-      <img class="next" src="pictures/styled-button.png" alt="styled-components sphagetti code" height="430"/>
-    <div>
+    <h2>Универсальная кнопка на Sass</h2>
+    <pre>
+      <code>.btn <span class="value">{</span></code>
+      <code>    <span class="property">display</span><span class="punctuation">:</span> <span class="value">inline-block</span>;</code>      
+      <code>    <span class="property">border</span><span class="punctuation">:</span> <span class="value">none</span>;</code>
+      <code>    <span class="property">border-radius</span><span class="punctuation">:</span> <span class="value">$base-radius</span>;</code>
+      <code>    <span class="property">cursor</span><span class="punctuation">:</span> <span class="value">pointer</span>;</code>
+      <code>    <span class="property">font-size</span><span class="punctuation">:</span> <span class="value">$base-font-size</span>;</code>
+      <code>    <span class="property">padding</span><span class="punctuation">:</span> <span class="value">0 12px</span>;</code>
+      <code>    <span class="interpolation">/* больше стилей для обычной кнопки... */</span></code>
+      <code> </code>
+      <code>    &--secondary <span class="value">{</span></code>
+      <code>        <span class="property">background</span><span class="punctuation">:</span> <span class="value">$secondary</span>;</code>
+      <code>    <span class="value">}</span></code>
+      <code> </code>
+      <code>    &--small <span class="value">{</span></code>
+      <code>        <span class="property">font-size</span><span class="punctuation">:</span> <span class="value">($base-font-size * 0.875)</span>;</code>
+      <code>        <span class="property">line-height</span><span class="punctuation">:</span> <span class="value">2.2</span>;</code>
+      <code>        <span class="property">padding</span><span class="punctuation">:</span> <span class="value">0 12px</span>;</code>
+      <code>    <span class="value">}</span></code>
+      <code>    <span class="interpolation">/* больше стилей для других вариаций кнопки... */</span></code>
+      <code><span class="value">}</span>;</code>
+    </pre>
     <style>
       #sass-styles code {
         font-size: 11px;
       }
-      #sass-styles .wrapper {
-        display: flex;
-        justify-content: space-between;
+    </style>
+  </section>
+
+  <section class="slide code-example" id="hell">
+    <h2>Ад интерполяций</h2>
+    <pre>
+      <code><span class="property">const</span> Button <span class="operator">=</span> styled.button <span class="value">`</span></code>
+      <code>    <span class="property">border</span><span class="punctuation">:</span> <span class="interpolation">${</span>props <span class="operator">=></span> props.inverted <span class="operator">?</span> <span class="value">'1px solid #DEC19F'</span> <span class="operator">:</span> <span class="value">'none'</span><span class="interpolation">}</span> ;</code>
+      <code>    <span class="property">cursor</span><span class="punctuation">:</span> <span class="interpolation">${</span>props <span class="operator">=></span> props.disabled <span class="operator">?</span> <span class="value">'not-allowed'</span> <span class="operator">:</span> <span class="value">'pointer'</span><span class="interpolation">}</span> ;</code>
+      <code>    <span class="property">font-size</span><span class="punctuation">:</span> <span class="interpolation">${</span>props <span class="operator">=></span>(props.small <span class="operator">&&</span> <span class="value">styles.baseFontSize * 0.875</span>)</code>
+      <code>        <span class="operator">||</span> (props.large <span class="operator">&&</span> <span class="value">styles.baseFontSize * 1.375</span>) <span class="operator"></span></code>
+      <code>        <span class="operator">||</span> (<span class="value">styles.baseFontSize</span>) <span class="operator"></span></code>
+      <code>    <span class="interpolation">}</span>;</code>
+      <code>    <span class="property">line-height</span><span class="punctuation">:</span> <span class="interpolation">${</span>props <span class="operator">=></span>(props.small <span class="operator">&&</span> <span class="value">'2.2'</span>) <span class="operator">||</span> (props.large <span class="operator">&&</span> <span class="value">'1.25'</span>) <span class="operator">||</span> <span class="value">'2.5'</span><span class="interpolation">}</span>;</code>
+      <code>    <span class="property">display</span><span class="punctuation">:</span> <span class="value">inline-block</span>;</code>
+      <code>    <span class="property">padding</span><span class="punctuation">:</span> <span class="interpolation">${</span>props <span class="operator">=></span></code>
+      <code>        props.large <span class="operator">?</span> <span class="value">'16px 25px 17px'</span> <span class="operator">:</span> <span class="value">'0 12px'</span></code>
+      <code>    <span class="interpolation">}</span>;</code>
+      <code>    <span class="property">border</span><span class="punctuation">:</span> <span class="value">2px solid palevioletred</span>;</code>
+      <code>    <span class="property">background-color</span><span class="punctuation">:</span> <span class="interpolation">${</span>props <span class="operator">=></span></code>
+      <code>        (props.primary <span class="operator">&&</span> <span class="value">styles.colors.primary</span>)</code>
+      <code>        <span class="operator">||</span> (props.danger <span class="operator">&&</span> <span class="value">styles.colors.danger</span>) <span class="operator"></span></code>
+      <code>        <span class="operator">||</span> ((props.inverted <span class="operator">||</span> props.link) <span class="operator">&&</span> <span class="value">'#fff'</span>) <span class="operator"></span></code>
+      <code>        <span class="operator">||</span> (props.disabled <span class="operator">&&</span> <span class="value">styles.colors.brandGrey</span>) <span class="operator"></span></code>
+      <code>    <span class="interpolation">}</span>;</code>
+      <code><span class="value">`</span>;</code>
+    </pre>
+    <style>
+      #hell code {
+        font-size: 11px;
       }
     </style>
   </section>

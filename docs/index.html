@@ -13,12 +13,12 @@
 
 	<header class="caption">
 		<h1>CSS-in-JS 101</h1>
-		<p>Evgenii Shkodin, Evil Martians</p>
+		<p>Eвгений Шкодин, Злые Марсиане</p>
 	</header>
 
 	<section class="slide" id="cover">
 		<h2>CSS-in-JS 101</h2>
-		<p>Brought to you by <a href="http://twitter.com/iffjey">Evgenii Shkodin</a></p>
+		<p>представляет <a href="http://twitter.com/iffjey">Eвгений Шкодин</a></p>
 		<p class="evilmartians" align="center">
 			<a href="https://evilmartians.com/">
 				<img src="pictures/evil-martians-logo.png" alt="Sponsored by Evil Martians" width="260" height="236">
@@ -48,7 +48,7 @@
 	<section class="slide" id="alert">
 		<h2 class="shout shrink">
       <img src="pictures/alert.svg" alt="alert-sign" height="250" />
-			Imposture syndrom alert
+			Внимание! Синдром самозванца
 		</h2>
 		<style>
 			#alert h2 {
@@ -64,8 +64,8 @@
 	<section class="slide" id="disclaimer">
     <h2>Disclaimer</h2>
     <div>
-      <p class="note">styled-components - Visual primitives for the component age.</p>
-      <p>Use the best bits of ES6 and CSS to style your apps without stress </p>
+      <p class="note">styled-components - визуальные примитивы для эпохи компонентов.</p>
+      <p>Используют лучшие части ES6 и CSS для оформления ваших приложений без проблем</p>
     </div>
     <style>
       #disclaimer {
@@ -84,10 +84,14 @@
         color: #fff;
         margin: 0;
       }
+      #disclaimer p {
+        font-size: 22px;
+      }
     </style>
 	</section>
 
-	<section class="slide code-example">
+	<section class="slide code-example" id="creating">
+    <h2>Создание компонента</h2>
     <pre>
       <code><span class="operator">import</span> styled <span class="operator">from</span> <span class="value">"styled-components"</span></code>
       <code> </code>
@@ -100,20 +104,29 @@
       <code>    <span class="property">border-radius</span><span class="punctuation">:</span> <span class="value">3px</span>;</code>
       <code><span class="value">`</span>;</code>
     </pre>
+    <style>
+      #creating code {
+        font-size: 20px;
+      }
+    </style>
 	</section>
 
-	<section class="slide code-example">
+	<section class="slide code-example" id="rendering">
+  <h2>Использование компонента</h2>
   <pre>
       <code>render(</code>
       <code>    &lt;div&gt;</code>
-      <code>      <span class="property">&lt;Input</span> placeholder<span class="operator">=</span><span class="value">"Resistance is futile"</span> <span class="property">/&gt;</span></code>
-      <code>      <span class="property">&lt;Input</span> placeholder<span class="operator">=</span><span class="value">"Surrender"</span> <span class="property">/&gt;</span></code>
+      <code>      <span class="property">&lt;Input</span> placeholder<span class="operator">=</span><span class="value">"Сопротивление бесполезно"</span> <span class="property">/&gt;</span></code>
+      <code>      <span class="property">&lt;Input</span> placeholder<span class="operator">=</span><span class="value">"Сдавайтесь"</span> <span class="property">/&gt;</span></code>
       <code>    &lt;/div&gt;</code>
       <code>);</code>
     </pre>
-    <input class="test-input" placeholder="Resistance is futile" />
-    <input class="test-input" placeholder="Surrender" />
+    <input class="test-input" placeholder="Сопротивление бесполезно" />
+    <input class="test-input" placeholder="Сдавайтесь" />
     <style>
+      #rendering code {
+        font-size: 24px;
+      }
       .test-input {
         height: 60px;
         width: 300px;
@@ -129,7 +142,8 @@
     </style>
 	</section>
 
-	<section class="slide code-example">
+	<section class="slide code-example" id="interpolations">
+    <h2>Динамические свойства и интерполяция</h2>
     <pre>
       <code><span class="operator">import</span> styled <span class="operator">from</span> <span class="value">"styled-components"</span></code>
       <code> </code>
@@ -142,20 +156,25 @@
       <code>    <span class="property">border-radius</span><span class="punctuation">:</span> <span class="value">3px</span>;</code>
       <code><span class="value">`</span>;</code>
     </pre>
+    <style>
+      #interpolations code {
+        font-size: 19px;
+      }
+    </style>
 	</section>
 
 	<section class="slide code-example">
     <pre>
       <code>render(</code>
       <code>    &lt;div&gt;</code>
-      <code>      <span class="property">&lt;Button&gt;</span>Surrender<span class="property">&lt;/Button&gt;</span></code></code>
-      <code>      <span class="property">&lt;Button</span> <span class="value">primary</span><span class="property">&gt;</span>Obey<span class="property">&lt;/Button&gt;</span></code></code>
+      <code>      <span class="property">&lt;Button&gt;</span>Сдаться<span class="property">&lt;/Button&gt;</span></code></code>
+      <code>      <span class="property">&lt;Button</span> <span class="value">primary</span><span class="property">&gt;</span>Подчиниться<span class="property">&lt;/Button&gt;</span></code></code>
       <code>    &lt;/div&gt;</code>
       <code>);</code>
     </pre>
 
-    <button class="test-button">Surrender</button>
-    <button class="test-button primary">Obey</button>
+    <button class="test-button">Сдаться</button>
+    <button class="test-button primary">Подчиниться</button>
     <style>
       .test-button {
         height: 60px;
@@ -177,7 +196,8 @@
     </style>
 	</section>
 
-	<section class="slide code-example">
+	<section class="slide code-example" id="injecting">
+    <h2>Слияние стилей</h2>
     <pre>
       <code><span class="operator">import</span> styled <span class="operator">from</span> <span class="value">"styled-components"</span></code>
       <code><span class="operator">import</span> Button <span class="operator">from</span> <span class="value">"./components/Button"</span></code>
@@ -186,10 +206,16 @@
       <code>    <span class="property">background</span><span class="punctuation">:</span> <span class="value">yellow</span>;</code>
       <code>    <span class="property">color</span><span class="punctuation">:</span> <span class="value">blue</span>;</code>
       <code><span class="value">`</span>;</code>
-      </pre>
+    </pre>
+    <style>
+      #injecting code {
+        font-size: 19px;
+      }
+    </style>
   </section>
   
   <section class="slide code-example">
+    <h2>Вложенные правила</h2>
     <pre>
       <code><span class="property">const</span> Link <span class="operator">=</span> styled.a <span class="value">`</span></code>
       <code>    <span class="property">color</span><span class="punctuation">:</span> <span class="value">green</span>;</code>
@@ -202,6 +228,7 @@
   </section>
 
   <section class="slide code-example" id="inject-global">
+    <h2>Глобальные стили</h2>
     <pre>
       <code><span class="operator">import</span> { injectGlobal } <span class="operator">from</span> <span class="value">"styled-components"</span></code>
       <code> </code>
@@ -218,12 +245,13 @@
     </pre>
     <style>
       #inject-global code {
-        font-size: 21px;
+        font-size: 17px;
       }
     </style>
 	</section>
 
-  <section class="slide code-example">
+  <section class="slide code-example" id="animation">
+    <h2>Создание анимации</h2>
     <pre>
       <code><span class="operator">import</span> { keyframes } <span class="operator">from</span> <span class="value">"styled-components"</span></code>
       <code> </code>
@@ -236,6 +264,11 @@
       <code>    <span class="punctuation">}</span></code>
       <code><span class="value">`</span>;</code>
     </pre>
+    <style>
+      #animation code {
+        font-size: 20px;
+      }
+    </style>
   </section>
 
   <section class="slide code-example">
@@ -316,18 +349,18 @@
   <section class="slide" id="ben-lesh-quotes">
     <figure>
       <blockquote class="no-quotes">
-        <p>I'm moving from storing my CSS, JS and HTML in different files, to physically putting them on different drives. Keep those concerns separate</p>
+        <p>Я решил перейти от хранения CSS, JS и HTML в разных файлах к тому, чтобы хранить их на разных физических дисках. Чтобы точно разделять задачи.</p>
       </blockquote>
-      <figcaption>Ben Lesh <img class="avatar" src="pictures/benlesh.jpg" alt="Ben Lesh" />  <a href="https://twitter.com/BenLesh">@BenLesh</a></figcaption>
+      <figcaption>Бен Леш <img class="avatar" src="pictures/benlesh.jpg" alt="Ben Lesh" />  <a href="https://twitter.com/BenLesh">@BenLesh</a></figcaption>
     </figure>
     <figure class="next">
       <blockquote class="no-quotes">
-        <p>- You meant to write data centers, right? better safe than sorry</p>
+        <p>- Ты хотел сказать в разных дата-центрах? Ну, чтобы перестраховаться.</p>
       </blockquote>
     </figure>
     <figure class="next">
       <blockquote class="no-quotes">
-        <p>- Different universes. Working on Quantum Storage technology right now</p>
+        <p>- В разных вселенных. Работаю сейчас над квантовым хранилищем.</p>
       </blockquote>
     </figure>
   </section>
@@ -423,14 +456,14 @@
 	</section>
 
 	<section class="slide">
-    <h2>How to choose?</h2>
+    <h2>Как выбрать?</h2>
 		<ol>
-			<li>Objects vs Template literals <a href="#object-syntax">#Object-syntax</a></li>
-			<li class="next">React vs Framework agnostic</li>
-			<li class="next">React Native support?</li>
-			<li class="next">Server-side rendering support?</li>
-			<li class="next">Dynamic values?</li>
-			<li class="next">Bonus: integration with Sketch?</li>
+			<li>Объекты или строковые литералы <a href="#object-syntax">#Объектный синтаксис</a></li>
+			<li class="next">React или что-то универсальное</li>
+			<li class="next">Поддержка React Native?</li>
+			<li class="next">Поддержка серверного рендеринга?</li>
+			<li class="next">Динамические значения</li>
+			<li class="next">Бонус: интеграция со Sketch?</li>
 		</ol>
   </section>
   
@@ -592,7 +625,7 @@
         <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
       </tr>
     </table>
-    <p>Source: <a href="https://github.com/tuchk4/awesome-css-in-js">Awesome-CSS-in-JS</a></p>
+    <p>Источник: <a href="https://github.com/tuchk4/awesome-css-in-js">Awesome-CSS-in-JS</a></p>
     <style>
       #libraries-table table {
         font-size: 16px;
@@ -607,7 +640,7 @@
   </section>
   
   <section class="slide" id="myths">
-    <h2>Myths</h2>
+    <h2>Мифы</h2>
     <figure>
       <img class="cover" src="pictures/myths.jpg" alt="Myths">
     </figure>
@@ -626,84 +659,133 @@
     </style>
   </section>
 
-  <section class="slide">
+  <section class="slide" id="inline">
     <h2 class="shout myths">
-      CSS-in-JS </br> === </br> inline-styles
+      CSS-in-JS </br> === </br> инлайн-стили
     </h2>
+    <style>
+      #inline h2 {
+        font-size: 125px;
+      }
+    </style>
   </section>
 
-  <section class="slide">
+  <section class="slide" id="inline-busted">
     <h2 class="shout myths">
-      CSS-in-JS </br> === </br> inline-styles
+      CSS-in-JS </br> === </br> инлайн-стили
     </h2>
     <p class="shout shrink"><span class="busted">BUSTED</span></p>
+    <style>
+      #inline-busted h2 {
+        font-size: 125px;
+      }
+    </style>
   </section>
 
   <section class="slide">
     <h2 class="shout myths">
-      CSS-in-JS </br> is slow
+      CSS-in-JS </br> медленный
     </h2>
   </section>
 
   <section class="slide">
       <figure>
         <blockquote class="no-quotes">
-          <p>Myth: React is “faster than DOM”. Reality: it helps create maintainable applications, and is *fast enough* for most use cases</p>
+          <p>Миф: React «быстрее, чем DOM». Реальность: он помогает создать поддерживаемые приложения и *достаточно быстрый* в большинстве ситуаций.</p>
         </blockquote>
-        <figcaption>Dan Abramov <img class="avatar" src="pictures/danabramov.jpg" alt="Dan Abramov" />  <a href="https://twitter.com/dan_abramov">@dan_abramov</a></figcaption>
+        <figcaption>Дэн Абрамов <img class="avatar" src="pictures/danabramov.jpg" alt="Дэн Абрамов" />  <a href="https://twitter.com/dan_abramov">@dan_abramov</a></figcaption>
       </figure>
       <figure>
         <blockquote class="no-quotes">
-          <p>A point a lot of people miss about CSS-in-JS is that the perf problem is fixable, with stylesheets the maintainbility/scaling issues are not</p>
+          <p>Многие люди не понимают одной вещи про CSS-in-JS: проблема скорости решаема, а вот проблемы с поддержкой и масштабированием обычных стилей — нет.</p>
         </blockquote>
-        <figcaption>James Kyle <img class="avatar" src="pictures/jameskyle.jpg" alt="James Kyle" />  <a href="https://twitter.com/thejameskyle">@thejameskyle</a></figcaption>
+        <figcaption>Джеймс Кайл <img class="avatar" src="pictures/jameskyle.jpg" alt="Джеймс Кайл" />  <a href="https://twitter.com/thejameskyle">@thejameskyle</a></figcaption>
       </figure>
     </section>
 
     <section class="slide">
       <h2 class="shout myths">
-        CSS-in-JS </br> is slow
+        CSS-in-JS </br> медленный
       </h2>
       <p class="shout shrink"><span class="busted">BUSTED</span></p>
     </section>
 
-  <section class="slide">
+  <section class="slide" id="dumb">
     <h2 class="shout myths">
-      CSS-in-JS </br> for dumb developers
+      CSS-in-JS </br> для глупых разработчиков
     </h2>
+    <style>
+      #dumb h2 {
+        font-size: 125px;
+      }
+    </style>
   </section>
 
-  <section class="slide">
+  <section class="slide" id="dumb-busted">
     <h2 class="shout myths">
-      CSS-in-JS </br> for dumb developers
+      CSS-in-JS </br> для глупых разработчиков
       <p class="shout shrink"><span class="busted">BUSTED</span></p>
     </h2>
+    <style>
+      #dumb-busted h2 {
+        font-size: 125px;
+      }
+    </style>
   </section>
 
   <section class="slide">
-    <h2>Tooling</h2>
+    <h2>Инструменты</h2>
     <ul>
-      <li>Linting - <a href="https://github.com/styled-components/stylelint-processor-styled-components">stylelint-processor-styled-components</a></li>
-      <li class="next">Syntax highlighting - <a href="https://github.com/styled-components/vscode-styled-components">vscode-styled-components</a></li>
-      <li class="next">Snapshot testing - <a href="https://github.com/styled-components/jest-styled-components">jest-styled-components</a></li>
-      <li class="next">Mixins and helpers - <a href="https://github.com/styled-components/polished">polished</a> <span class="interpolation">${ ✨ }</span></li>
-      <li class="next">Design system utilities - <a href="https://github.com/jxnblk/styled-system">styled-system</a></li>
-      <li class="next">Autocomplete - <a href="https://github.com/ansumanshah/css-in-js">css-in-js: Extension for Atom and VS code</a></li>
+      <li>Линтинг - <a href="https://github.com/styled-components/stylelint-processor-styled-components">stylelint-processor-styled-components</a></li>
+      <li class="next">Подсветка синтаксиса - <a href="https://github.com/styled-components/vscode-styled-components">vscode-styled-components</a></li>
+      <li class="next">Тестирование состояний - <a href="https://github.com/styled-components/jest-styled-components">jest-styled-components</a></li>
+      <li class="next">Миксины и хелперы - <a href="https://github.com/styled-components/polished">polished</a> <span class="interpolation">${ ✨ }</span></li>
+      <li class="next">Утилиты для дизайн-систем - <a href="https://github.com/jxnblk/styled-system">styled-system</a></li>
+      <li class="next">Автодополнение - <a href="https://github.com/ansumanshah/css-in-js">Расширение css-in-js для Atom и VS code</a></li>
     </ul>
   </section>
 
-  <section class="slide">
-    <h2>Drawbacks</h2>
+  <section class="slide" id="benefits">
+    <h2>Достоинства</h2>
     <ul>
-      <li><a href="https://blockmetry.com/blog/javascript-disabled">0.2% of browsers have javascript disabled</a></li>
-      <li class="next">Tooling: still not perfect (e.g. autocomplete doesn't support template literals)</li>
-      <li class="next">Readable classnames for test automation</li>
-      <li class="next">User inputs must be sanitized - <a href="https://reactarmory.com/answers/how-can-i-use-css-in-js-securely">How can I use CSS-in-JS securely?</a></li>
-      <li class="next">Absence of atomic web design leads to "spaghetti code" - <a href="http://bradfrost.com/blog/post/atomic-web-design/">Atomic Web Design</a></li>
+      <li>Помогает думать компонентами</li>
+      <li class="next">Поддержка тем из коробки</li>
+      <li class="next">Полная изоляция стилей</li>
+      <li class="next">Изолированные селекторы (по умолчанию)</li>
+      <li class="next">Префиксы (по умолчанию)</li>
+      <li class="next">Выделение критического CSS</li>
+      <li class="next">Отложенное вычисление - таблицы стилей создаются, только при использовании компонента</li>
+      <li class="next">Легкое использование единого кода CSS и JS  - констант и функций</li>
+      <li class="next">Умная оптимизация с Java Script: удаление кода, который не используется</li>
+      <li class="next">Юнит тесты для CSS</li>
+      <li class="next">Единый источник правды: использование общей базы кода с React Native</li>
     </ul>
+    <style>
+      #benefits ul {
+        font-size: 18px;
+      }
+    </style>
+  </section>
+
+  <section class="slide" id="drawbacks">
+    <h2>Недостатки</h2>
+    <ul>
+      <li><a href="https://blockmetry.com/blog/javascript-disabled">В 0,2% браузеров отключен Java Script</a></li>
+      <li class="next">Инструменты всё ещё не идеальны: автодополнение не поддерживает строковые литералы</li>
+      <li class="next">Читаемые классы для автоматизации тестирования</li>
+      <li class="next">Не все знают Java Script</li>
+      <li class="next">Пользовательский ввод нужно проверять: - <a href="https://reactarmory.com/answers/how-can-i-use-css-in-js-securely">Как использовать CSS-in-JS безопасно?</a></li>
+      <li class="next">Отсутствие атомарного подхода к дизайну приводит к спагетти-коду: <a href="http://bradfrost.com/blog/post/atomic-web-design/">Атомарный веб-дизайн</a></li>
+    </ul>
+    <style>
+      #drawbacks ul {
+        font-size: 22px;
+      }
+    </style>
   </section>
 
   <section class="slide code-example" id="sass-styles">
+    <h2>Ад интерполяций</h2>
     <div class="wrapper">
       <pre>
         <code>.btn <span class="value">{</span></code>
@@ -713,7 +795,7 @@
         <code>    <span class="property">cursor</span><span class="punctuation">:</span> <span class="value">pointer</span>;</code>
         <code>    <span class="property">font-size</span><span class="punctuation">:</span> <span class="value">$base-font-size</span>;</code>
         <code>    <span class="property">padding</span><span class="punctuation">:</span> <span class="value">0 12px</span>;</code>
-        <code>    <span class="interpolation">/* more styles for default button... */</span></code>
+        <code>    <span class="interpolation">/* больше стилей для обычной кнопки... */</span></code>
         <code> </code>
         <code>    &--secondary <span class="value">{</span></code>
         <code>        <span class="property">background</span><span class="punctuation">:</span> <span class="value">$secondary</span>;</code>
@@ -724,14 +806,14 @@
         <code>        <span class="property">line-height</span><span class="punctuation">:</span> <span class="value">2.2</span>;</code>
         <code>        <span class="property">padding</span><span class="punctuation">:</span> <span class="value">0 12px</span>;</code>
         <code>    <span class="value">}</span></code>
-        <code>    <span class="interpolation">/* more styles for customized button... */</span></code>
+        <code>    <span class="interpolation">/* больше стилей для других вариаций кнопки... */</span></code>
         <code><span class="value">}</span>;</code>
       </pre>
-      <img class="next" src="pictures/styled-button.png" alt="styled-components sphagetti code" height="500"/>
+      <img class="next" src="pictures/styled-button.png" alt="styled-components sphagetti code" height="430"/>
     <div>
     <style>
       #sass-styles code {
-        font-size: 13px;
+        font-size: 11px;
       }
       #sass-styles .wrapper {
         display: flex;
@@ -741,17 +823,17 @@
   </section>
 
   <section class="slide">
-    <h2>Future</h2>
+    <h2>Будущее</h2>
     <ul>
       <li>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Shadow_DOM">Web Components + Shadow DOM</a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Shadow_DOM">Веб-компоненты + Shadow DOM</a>
         <img class="next" src="pictures/shadowdom.png" height="300" />
       </li>
     </ul>
   </section>
 
   <section class="slide">
-    <h2>Near future</h2>
+    <h2>Ближайшее будущее</h2>
     <ul>
       <li>
         <a href="https://github.com/cssinjs/istf-spec">ISTF - Interoperable Style Transfer Format</a>
@@ -760,52 +842,69 @@
     </ul>
   </section>
 
+  <section class="slide" id="summary">
+      <h2>Выводы</h2>
+      <ul>
+        <li>Безопасность через дизайн API, а не через дисциплину</li>
+        <li class="next">Куча инструментов из коробки</li>
+        <li class="next">Не нужно много думать</li>
+        <li class="next">Лучшие практики для написания CSS сразу работают</li>
+        <li class="next">Много больших компаний уже используют это в продакшене: Microsoft, Atlassian, Bloomberg, Reddit, PayPal</li>
+      </ul>
+    </section>
+
   <section class="slide">
-    <h2>Articles</h2>
+    <h2>Статьи</h2>
     <ul>
       <li>
-        <a href="https://medium.com/seek-blog/a-unified-styling-language-d0c208de2660">A unified styling language</a> by Mark Dalgleish
+        <a href="https://medium.com/seek-blog/a-unified-styling-language-d0c208de2660">A unified styling language</a>, Марк Далглейш
       </li>
       <li>
-        <a href="https://medium.com/@okonetchnikov/is-css-in-js-really-bad-for-ux-e9cce7b2da83">Is CSS-in-JS really bad for UX?</a> by Andrey Okonetchnikov
+        <a href="https://medium.com/@okonetchnikov/is-css-in-js-really-bad-for-ux-e9cce7b2da83">Is CSS-in-JS really bad for UX?</a>, Андрей Оконечников
       </li>
       <li>
-        <a href="https://medium.com/@steida/css-in-js-the-argument-refined-471c7eb83955">CSS in JS: The Argument Refined</a> by Daniel Steigerwald
+        <a href="https://medium.com/@steida/css-in-js-the-argument-refined-471c7eb83955">CSS in JS: The Argument Refined</a>, Дэниель Стайгервальд
       </li>
       <li>
-        <a href="https://medium.com/object-partners/css-in-js-benefits-drawback-and-tooling-80286b03f9aa">CSS in JS: Benefits, Drawbacks, and Tooling</a> by Dustin Schau
+        <a href="https://medium.com/object-partners/css-in-js-benefits-drawback-and-tooling-80286b03f9aa">CSS in JS: Benefits, Drawbacks, and Tooling</a>, Дастин Шау
       </li>
       <li>
-        <a href="https://mxstbr.blog/2016/11/styled-components-magic-explained/">The magic behind 💅 styled-components</a> by Max Stoiber
+        <a href="https://mxstbr.blog/2016/11/styled-components-magic-explained/">The magic behind 💅 styled-components</a>, Макс Стойбер
+      </li>
+      <li>
+        <a href="https://medium.com/@tkh44/writing-a-css-in-js-library-from-scratch-96cd23a017b4">Writing A CSS-in-JS Library From Scratch</a>, Кай Хоэнберг
+      </li>
+      <li>
+        <a href="https://medium.com/styled-components/with-styled-components-into-the-future-d1d917e7c22c">With styled-components into the future</a>, Фил Плактан
       </li>
     </ul>
   </section>
 
   <section class="slide" id="persons">
-    <h2>Persons</h2>
+    <h2>Люди</h2>
     <ul>
       <li>
-          Max Stoiber
-          <img class="avatar" src="pictures/maxstoiber.jpg" alt="Max Stoiber" /> <a href="https://twitter.com/mxstbr">@mxstbr</a> - styled-components
+          Макс Стойбер
+          <img class="avatar" src="pictures/maxstoiber.jpg" alt="Макс Стойбер" /> <a href="https://twitter.com/mxstbr">@mxstbr</a> - styled-components
       </li>
       <li>
-          Glen Maddern
-          <img class="avatar" src="pictures/glen.png" alt="Glen Maddern" /> <a href="https://twitter.com/glenmaddern">@glenmaddern</a> - CSS Modules co-creator
+          Глен Маддерн
+          <img class="avatar" src="pictures/glen.png" alt="Глен Маддерн" /> <a href="https://twitter.com/glenmaddern">@glenmaddern</a> - соавтор CSS-модулей
       </li>
       <li>
-          Phil Plückthun
-          <img class="avatar" src="pictures/phil.jpg" alt="Phil Plückthun" /> <a href="https://twitter.com/_philpl">@_philpl</a> - styled-components / ISTF
+          Фил Плактан
+          <img class="avatar" src="pictures/phil.jpg" alt="Фил Плактан" /> <a href="https://twitter.com/_philpl">@_philpl</a> - styled-components / ISTF
       </li>
       <li>
-          Mark Dalgleish
-          <img class="avatar" src="pictures/mark.jpg" alt="Mark Dalgleish" /> <a href="https://twitter.com/markdalgleish">@markdalgleish</a> - CSS Modules co-creator
+          Марк Далглейш
+          <img class="avatar" src="pictures/mark.jpg" alt="Марк Далглейш" /> <a href="https://twitter.com/markdalgleish">@markdalgleish</a> - соавтор CSS-модулей
       </li>
       <li>
-          Oleg Slobodskoi
+          Олег Слободской
           <img class="avatar" src="pictures/oleg.jpg" alt="Oleg Slobodskoi" /> <a href="https://twitter.com/oleg008">@oleg008</a> - JSS
       </li>
       <li>
-          Kye Hohenberger
+          Кай Хоэнберг
           <img class="avatar" src="pictures/kye.jpg" alt="Kye Hohenberger" /> <a href="https://twitter.com/tkh44">@tkh44</a> - emotion
       </li>
     </ul>
@@ -817,25 +916,25 @@
   </section>
 
   <section class="slide">
-    <h2>Links</h2>
+    <h2>Ссылки</h2>
     <ul>
       <li>
-        <a href="https://github.com/MicheleBertoli/css-in-js">React: CSS in JS techniques comparison</a> by Michele Bertoli
+        <a href="https://github.com/MicheleBertoli/css-in-js">React: CSS in JS techniques comparison</a>, Мишель Бертоли
       </li>
       <li>
-        <a href="https://tuchk4.github.io/css-in-js-app">CSS-in-JS perfomance benchmarks test app</a> by Valerii Sorokobatko
+        <a href="https://tuchk4.github.io/css-in-js-app">CSS-in-JS perfomance benchmarks test app</a>, Валерий Сорокобатько
       </li>
       <li>
-        <a href="https://github.com/A-gambit/CSS-IN-JS-Benchmarks">CSS in JS Benchmarks</a> by Gregory Shehet
+        <a href="https://github.com/A-gambit/CSS-IN-JS-Benchmarks">CSS in JS Benchmarks</a>, Григорий Шехет
       </li>
       <li>
-        <a href="https://css-in-js-playground.com/">CSS in JS Playground</a> by Dustin Schau
+        <a href="https://css-in-js-playground.com/">CSS in JS Playground</a>, Дастин Шау
       </li>
     </ul>
   </section>
 
   <section class="slide" id="questions">
-    <h2>Questions?</h2>
+    <h2>Вопросы?</h2>
     <div class="wrapper">
       <div class="container twitter">
         <img src="pictures/twitter.svg" alt="Evgenii Shkodin" height="50" width="50" /><a href="https://twitter.com/iffjey">iffjey</a>
@@ -845,11 +944,11 @@
           <img src="pictures/twitter.svg" alt="Evil Martians" height="50" width="50" /><a href="https://twitter.com/evilmartians">evilmartians</a>
         </div>
         <div class="container internet">
-            <img src="pictures/internet.svg" alt="Evil Martians" height="50" width="50" /><a href="https://evilmartians.com/">https://evl.ms</a>
+            <img src="pictures/internet.svg" alt="Evil Martians" height="50" width="50" /><a href="https://evilmartians.com/">evl.ms</a>
         </div>
       </div>
       <div class="container internet">
-        <img src="pictures/internet.svg" alt="Cult of Martians" height="50" width="50" /><a href="https://cultofmartians.com/">https://cultofmartians.com</a>
+        <img src="pictures/internet.svg" alt="Cult of Martians" height="50" width="50" /><a href="https://cultofmartians.com/">cultofmartians.com</a>
       </div>
       <a class="evilmartians" href="https://evilmartians.com/">
 				<img src="pictures/evil-martians-logo.png" alt="Sponsored by Evil Martians" width="390" height="354">

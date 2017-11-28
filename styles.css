@@ -19,6 +19,12 @@
   background: #000;
   color: #fff;
 }
+.code-example pre code::before {
+  opacity: 0.3;
+}
+.code-example h2 {
+  color: #fff;
+}
 .property {
   color: #D1949E;
 }
